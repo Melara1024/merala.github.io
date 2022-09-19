@@ -208,7 +208,7 @@ img.title
   }
 
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 350px) {
   .page {
   }
   body{
@@ -216,7 +216,7 @@ img.title
   }
   img.title
   {
-    margin-left:0%;
+    margin-left:-15%;
     max-block-size: 38px;
   }
 }

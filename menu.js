@@ -13,6 +13,10 @@
         $('#nav-toggle').click(function(){
             $header.toggleClass('open');
         });
+
+        $('#nav-closer').click(function(){
+            $header.removeClass('open');
+        });
     });
 })(jQuery);
 
