@@ -1,0 +1,300 @@
+header{
+  overflow: hidden;
+  position: fixed;
+
+  width:fit-content;
+  
+  top: 0;
+  left: 0;
+}
+nav {
+  width:100%;
+  height:60px;
+  background-color: rgb(223, 89, 0);
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+ul {
+  margin-left:auto;
+  margin-right: auto;
+  display:flex;
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin-right: 80px;
+}
+
+
+
+body {
+
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 180px;
+
+  width:auto;
+  max-width: none;
+  min-width:200px;
+
+  min-height: 100vh;
+
+  background-image: url("../resources/background/polished_blackstone_bricks.png");
+  background-position:center center;
+  image-rendering:crisp-edges;
+
+  background-size:96px;
+  background-repeat:repeat;
+  
+}
+
+footer{
+  
+}
+
+
+.page {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.header {
+  height: max-content;
+  width:100%;
+
+  background-color: rgb(34, 34, 34);
+  border-radius: 5px;
+}
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: rgba(255, 255, 255);
+  border-radius: 5px;
+}
+.footer {
+  clear: both;
+}
+img.title
+{
+  image-rendering: optimizeSpeed;
+  width: auto;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-block-size: 80px;
+
+  margin-left:auto;
+  margin-right: auto;
+  display: block;
+}
+.figtitle{
+  vertical-align: middle;
+}
+
+
+@media screen and (max-width: 1650px) {
+  .page {
+    width: 100%;
+  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  img.title
+  {
+
+  }
+  a {
+    margin-right: 80px;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .page {
+  }
+  body{
+    margin-top: 70px;
+  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    width:94%;
+  }
+  img.title
+  {
+    margin-left:5%;
+    max-block-size: 40px;
+  }
+  a {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .page {
+  }
+  body{
+    margin-top: 60px;
+  }
+  img.title
+  {
+    margin-left:0%;
+    max-block-size: 38px;
+  }
+}
+
+.area {
+  width:initial;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+}
+.tab_class {
+  width: calc(100%/5);
+
+  height:30px;
+  padding-top: 10px;  
+
+  background-color: rgb(202, 202, 202);
+  line-height:15px;
+  font-size: 15px;
+  text-align:center;
+    
+  display: block;
+  float: left;
+  order: -1;
+
+
+  border-radius: 30px;
+}
+input[name="tab_name"] {
+  display: none;
+}
+input:checked + .tab_class {
+  background-color: rgb(102, 189, 184);
+
+  color: rgb(255, 255, 255);
+}
+.content_class {
+  display: none;
+  width: 100%;
+  text-align: center;
+
+}
+#not_center{
+  text-align: left;
+}
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+  #nav-toggle {
+    display: none;
+    position: absolute;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    right: 0px;
+    top: 0px;
+    width:80px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  #nav-toggle div {
+    position: relative;
+  }
+
+
+  #global-nav {
+    width:100%;
+    height:0px;
+
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+  }
+
+
+
+  #nav-toggle {
+    display: block;
+  }
+  /* #nav-toggle 切り替えアニメーション */
+  #nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background: rgb(223, 89, 0);
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+  }
+  #nav-toggle span:nth-child(1) {
+    top: 15px;
+    margin-left: 30px;
+  }
+  #nav-toggle span:nth-child(2) {
+    top: 25px;
+    margin-left: 30px;
+  }
+  #nav-toggle span:nth-child(3) {
+    top: 35px;
+    margin-left: 30px;
+  }
+
+  .open #nav-toggle span:nth-child(1) {
+    top: 25px;
+    margin-left: 30px;
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    transform: rotate(315deg);
+  }
+  .open #nav-toggle span:nth-child(2) {
+    width: 0;
+    left: 20%;
+  }
+  .open #nav-toggle span:nth-child(3) {
+    top: 25px;
+    margin-left: 30px;
+    -webkit-transform: rotate(-315deg);
+    -moz-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+  }
+
+  .open #global-nav {
+    height:600px;
+  }
+  
+}
