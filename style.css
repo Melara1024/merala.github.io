@@ -59,7 +59,7 @@ input[name="tab_item"] {
 }
 
 /*タブ切り替えの中身のスタイル*/
-.tab_content {
+.tab_content1, .tab_content2, .tab_content3 {
   display: none;
   padding: 40px 40px 0;
   clear: both;
@@ -68,9 +68,9 @@ input[name="tab_item"] {
 
 
 /*選択されているタブのコンテンツのみを表示*/
-#all:checked ~ #all_content,
-#programming:checked ~ #programming_content,
-#design:checked ~ #design_content {
+#selection1:checked + .tab_content1,
+#selection2:checked + .tab_content2,
+#selection3:checked + .tab_content3 {
   display: block;
 }
 
