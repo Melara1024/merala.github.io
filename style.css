@@ -10,11 +10,22 @@ header{
 
 
 
-/*ここからタブ*/
-.tabs {
+/*ここからタブの設定*/
 
+/*ボタンと記事全体*/
+.tabs  {
   width:100%;
-  height:60px;
+  height:auto;
+
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+/*ボタン部分のみ*/
+.tab {
+  width:100%;
+  height:30px;
   background-color: rgb(223, 89, 0);
   box-sizing: border-box;
 
@@ -24,42 +35,74 @@ header{
   margin:0%;
   height: 100%;
 
-  display:flex;
-  flex-direction: row;
-  justify-content:center;
   }
 
 /*タブのスタイル*/
-.tab_item {
-  list-style: none;
-  flex-basis: 20%;
+.tab_item{
   width: 20%;
-  height: 100%;
+  height: 60px;
 
-  width: calc(100%/3);
-  height: 50px;
   background-color: rgb(223, 89, 0);
-  line-height: 50px;
+
   font-size: 16px;
   text-align: center;
   color: #ffffff;
-  display: block;
+
+
   float: left;
   text-align: center;
   font-weight: bold;
   transition: all 0.2s ease;
+
+
+  color: rgb(255, 255, 255);
+  line-height:60px;
+
+  background-color: rgb(223, 89, 0);
+
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  position:sticky;
+  position:fixed
 }
+#button1{
+  margin-left: 0%;
+}
+#button2{
+  margin-left: 20%;
+}
+#button3{
+  margin-left: 40%;
+}
+#button4{
+  margin-left: 60%;
+}
+#button5{
+  margin-left: 80%;
+}
+/*ホバー状態*/
 .tabs input:hover + .tab_item {
   background-color: rgb(255, 166, 0);
 }
+/*選択*/
+.tabs input:checked + .tab_item {
+  background-color: rgb(255, 166, 0);
+  color: rgb(66, 66, 66);
+  font-size: larger;
+}
 
 /*ラジオボタンを全て消す*/
-input[name="tab_item"] {
+input[name="tab_selection"] {
   display: none;
 }
 
+.margin{
+  height: 70px;
+}
 /*タブ切り替えの中身のスタイル*/
-.tab_content1, .tab_content2, .tab_content3 {
+.tab_content {
   display: none;
   padding: 40px 40px 0;
   clear: both;
@@ -68,48 +111,19 @@ input[name="tab_item"] {
 
 
 /*選択されているタブのコンテンツのみを表示*/
-#selection1:checked + .tab_content1,
-#selection2:checked + .tab_content2,
-#selection3:checked + .tab_content3 {
+#selection1:checked ~ #content1,
+#selection2:checked ~ #content2,
+#selection3:checked ~ #content3,
+#selection4:checked ~ #content4,
+#selection5:checked ~ #content5{
   display: block;
 }
 
-/*選択されているタブのスタイルを変える*/
-.tabs input:checked + .tab_item {
-  background-color: rgb(255, 166, 0);
-  color: rgb(66, 66, 66);
-  font-size: larger;
+
+
+article{
+  height:auto;
 }
-
-
-
-
-label {
-  height: 100%;
-  justify-content: center;
-  left: 50%;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 150%;
-  color: rgb(255, 255, 255);
-  line-height:60px;
-  
-}
-
-
-
-
-.tabs .tab_item{
-  background-color: rgb(223, 89, 0);
-
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-
-}
-
-
 
 body {
 
@@ -117,7 +131,7 @@ body {
 
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 180px;
+  margin-top: 90px;
 
   width:auto;
   max-width: none;
@@ -140,7 +154,6 @@ footer{
 
 
 .page {
-  max-width: 1600px;
   margin: 0 auto;
 }
 .header {
@@ -150,9 +163,10 @@ footer{
   background-color: rgb(34, 34, 34);
   border-radius: 5px;
 }
-.content {
+.tab_content {
   margin-left: auto;
   margin-right: auto;
+  max-width: 1200px;
   width: 100%;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -179,69 +193,49 @@ img.title
 
 
 @media screen and (max-width: 1650px) {
-  .page {
-    width: 100%;
-  }
-  .content {
-    margin-left: auto;
+  .tab_content {
+    width: 85%;
+    margin-left:auto;
     margin-right: auto;
-    width: 90%;
   }
 }
 
 
+
+
+
+
+
+
+
 @media screen and (max-width: 700px) {
-  .page {
-  }
   body{
-    margin-top: 70px;
+    margin-top: 50px;
   }
-  .content {
+  .tab_content{
     margin-left: auto;
     margin-right: auto;
-    width:94%;
+    width:76%;
   }
   img.title
   {
     margin-left:5%;
     max-block-size: 40px;
   }
-
-}
-@media screen and (max-width: 350px) {
-  .page {
+  #under_line{
+    background-color: rgb(223, 89, 0);
+    width: 100%;
+    height:5px;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
-  body{
-    margin-top: 60px;
+
+  .open .tabs input:checked + .tab_item {
+    background-color: rgb(255, 166, 0);
+    color: rgb(66, 66, 66);
+    font-size: larger;
   }
-  img.title
-  {
-    margin-left:-15%;
-    max-block-size: 38px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 700px) {
-
   #nav-toggle {
     display: none;
     position: absolute;
@@ -260,29 +254,89 @@ img.title
     position: relative;
   }
 
+  #button1{
+    margin-left: -20%;
+    margin-top: 0%;
+  }
+  #button2{
+    margin-left: -20%;
+    margin-top: 0%;
+  }
+  #button3{
+    margin-left: -20%;
+    margin-top: 0%;
+  }
+  #button4{
+    margin-left: -20%;
+    margin-top: 0%;
+  }
+  #button5{
+    margin-left: -20%;
+    margin-top: 0%;
+  }
 
+  .open #button1{
+    margin-left: -20%;
+    margin-top: 0px;
+    height: 60px;
+  }
+  .open #button2{
+    margin-left: -20%;
+    margin-top: 60px;
+    height: 60px;
+  }
+  .open #button3{
+    margin-left: -20%;
+    margin-top: 120px;
+    height: 60px;
+  }
+  .open #button4{
+    margin-left: -20%;
+    margin-top: 180px;
+    height: 60px;
+  }
+  .open #button5{
+    margin-left: -20%;
+    margin-top: 240px;
+    height: 60px;
+  }
+
+
+  .tab  {
+    margin-top:20px;
+  }
   .tabs  {
     width:100%;
-    height:5px;
-
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
-    flex-direction: column;
   }
   .tab_item{
     margin-left:auto;
     margin-right: auto;
-    display:list-item;
-
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
-    flex-direction: column;
+  }
+  .margin{
+    width: 100%;
+    height:10px;
+  }
+  .open .tabs {
+    height:300px;
+  }
+  .open .tabs .tab_item{
+    height: 0%;
+    margin-left:-20%;
+
+    width: 200%;
+  }
+  .open #under_line{
+    background-color: rgb(223, 89, 0);
+    height:300px;
   }
   .tabs .tab_item{
     margin-left:0%;
-
 
     height: 0%;
     width: 0%;
@@ -291,17 +345,39 @@ img.title
     -moz-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
-  .tabs input:checked + .tab_item {
-    background-color: rgb(223, 89, 0);
-    color: #fff;
-    
-    
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+@media screen and (max-width: 370px) {
+  /*画面がちっちゃすぎるとき用*/
+  .page {
   }
+  body{
+    margin-top: 50px;
+  }
+  img.title
+  {
+    margin-left:-15%;
+    max-block-size: 38px;
+  }
+}
 
 
 
 
 
+
+
+
+@media screen and (max-width: 700px) {
   /* #nav-toggle 切り替えアニメーション */
   #nav-toggle {
     display: block;
@@ -329,7 +405,6 @@ img.title
     top: 35px;
     margin-left: 30px;
   }
-
   .open #nav-toggle span:nth-child(1) {
     top: 25px;
     margin-left: 30px;
@@ -348,28 +423,4 @@ img.title
     -moz-transform: rotate(-315deg);
     transform: rotate(-315deg);
   }
-
-  .open .tabs {
-    height:300px;
-  }
-  .open .tabs .tab_item{
-    height: 0%;
-    margin-left:-20%;
-
-    width: 200%;
-    
-  }
-  .open .tabs input:checked + .tab_item {
-    background-color: rgb(255, 166, 0);
-    color: rgb(66, 66, 66);
-    font-size: larger;
-  }
 }
-
-
-
-
-
-
-
-
