@@ -117,7 +117,9 @@ input[name="tab_selection"] {
 #selection4:checked ~ #content4,
 #selection5:checked ~ #content5{
   display: block;
+  
 }
+
 
 
 
@@ -145,10 +147,6 @@ body {
 
   background-size:96px;
   background-repeat:repeat;
-  
-}
-
-footer{
   
 }
 
