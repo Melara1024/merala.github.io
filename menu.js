@@ -17,14 +17,14 @@
             $article.toggleClass('open');
         });
 
-        $('#nav-closer').click(function(){
+        $('.tab_content').click(function(){
             $article.removeClass('open');
         });
         $('#nav-toggle').click(function(){
             $header.toggleClass('open');
         });
 
-        $('#nav-closer').click(function(){
+        $('.tab_content').click(function(){
             $header.removeClass('open');
         });
     });
